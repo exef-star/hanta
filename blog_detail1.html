@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog_detail.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- 这里的.container作为页面的版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 表示整个用户的信息区域 -->
+            <div class="card">
+                <img src="img/hanta.jpg" alt="">
+                <h3>可执行程序</h3>
+                <p>一个广东仔，不会说白话😭</p>
+                <p>有时在学校开挂</p>
+                <p>喜欢看FO的视频</p>
+                <hr>
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+                <!-- Setup and start animation! -->
+                <script>
+                var typed = new Typed('#element', {
+                strings: ['勤学如春起之苗，不见其增日有所长；辍学如磨刀之石，不见其损日有所亏。'],
+                typeSpeed: 60,
+                });
+                </script>
+                <a href="#">Gitee地址</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 右侧内容详情 -->
+        <div class="right">
+        <!-- 使用这个 div 来包裹整个博客的内容详情 -->
+        <div class="blog-content">
+            <!-- 博客标题 -->
+            <h1>看板娘基础教程（有手就行）</h1>
+            <!-- 博客的时间 -->
+            <div class="date">2024-01-25 09:27:00</div>
+            <!-- 正文 -->
+            
+            <p>你是不是非常羡慕别人的网页里有一个看板娘增加人气</p>
+            <p>他不仅会盯着你的鼠标一直看</p>
+            <p>而且有的看板娘会根据你的鼠标位置和你说话</p>
+            <p>这些都是基于Live2D的看板娘</p>
+            <p>那要如何使用它呢？</p>
+            <p>只需要在&lt;body&gt;和&lt;/body&gt;里面加入以下代码</p>
+            <img src="img/img1/code.png" width="869" height="493">
+            <p>那么，你就会得到一个超可爱的“看板娘”😘</p>
+            <img src="img/img1/koharu.png" width="169" height="306">
+            <p>那么这时就有人说了：“你这个看板娘也太幼稚了，我要换另外一个”</p>
+            <p>那么这时，我们就需要修改json的文件路径了</p>
+            <p>没错，就是红框框起来的jsonpath</p>
+            <img src="img/img1/code1.png" width="869" height="493">
+            <p>那我们要怎么修改里面的参数呢</p>
+            <p>只需要改一下网址就可以了</p>
+            <p>这里给大家提供一些模型的网址：</p>
+            <div>
+                <div>//黑猫咪：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json</div>
+                <div>//白猫咪：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json</div>
+                <div>//萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json</div>
+                <div>//狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json</div>
+                <div>//萌妹1号：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json</div>
+                <div>//萌妹2号：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json</div>
+                <div>//萌妹3号：https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json</div>
+                <div>//妹子4号：https://unpkg.com/live2d-widget-model-izumi@1.0.5/assets/izumi.model.json</div>
+                <div>//妹子5号：https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json</div>
+                <div>//6号：https://unpkg.com/live2d-widget-model-nico@1.0.5/assets/nico.model.json</div>
+                <div>//7号：https://unpkg.com/live2d-widget-model-ni-j@1.0.5/assets/ni-j.model.json</div>
+                <div>//8号：https://unpkg.com/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json</div>
+                <div>//9号：https://unpkg.com/live2d-widget-model-nito@1.0.5/assets/nito.model.json</div>
+                <div>//10号：https://unpkg.com/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json</div>
+                <div>//11号：https://unpkg.com/live2d-widget-model-unitychan@1.0.5/assets/unitychan.model.json</div>
+                <div>//帅哥1号：https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json</div>
+                <div>//帅哥2号：https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json</div>
+                </div>
+                <hr>
+                <p align="right">——by 可执行程序</p>
+                <button class="button button1">👍给作者点个赞</button>
+        </div>
+        </div>
+    </div>
+    <p align="center">Copyright © 2022-2024 hanta blog</p>
+    <script type="text/javascript" charset="utf-8" src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
+    <script>
+    L2Dwidget.init({
+    "model": {
+    　　　　　　　jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+    "scale": 1
+    },
+    "display": {
+    "position": "right", //模型的表现位置
+    "width": 150, //模型的宽度
+    "height": 300, //模型的高度
+    "hOffset": 0,
+    "vOffset": -20
+    },
+    "mobile": {
+    "show": true,
+    "scale": 0.5
+    },
+    "react": {
+    "opacityDefault": 0.7, //模型默认透明度
+    "opacityOnHover": 0.2
+    }
+    });
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("😂", "😘", "😍", "😊", "😁", "😭", "😜", "😝", "😄",
+                    "😡", "😀", "😥", "🙃", "😋", "👍", "👌", "😱");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+        !
+function() {
+    function n(n, e, t) {
+        return n.getAttribute(e) || t
+    }
+    function e(n) {
+        return document.getElementsByTagName(n)
+    }
+    function t() {
+        var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),
+            o: n(i, "opacity", .5),
+            c: n(i, "color", "0,0,0"),
+            n: n(i, "count", 99)
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+} ();
+    </script>
+</body>
+</html>
