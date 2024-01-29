@@ -9,7 +9,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/button.css">
     <link rel="stylesheet" href="css/jsstyle.css">
-    <link rel="stylesheet" href="css/comment.css">    
+    <link rel="stylesheet" href="css/comment.css">  
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+        <style>
+			ul{
+				background-color: white;
+				color: #000000;
+				width: 150px;
+				display: none;
+                background:rgba(222, 221, 221, 0);
+				/* 让当前的ul参照浏览器的边缘进行定位 */
+				position: absolute;
+				padding: 10px;
+				box-shadow: 0px 0px 5px black;
+				border-radius: 10px;
+			}
+			li{
+				list-style: none;
+				line-height: 40px;
+			}
+			li:hover{
+				color: white;
+				background-color: block;
+			}
+            a:link {
+                color: #000000
+            }
+		</style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -166,30 +192,27 @@
     </div>
     
     <p align="center">Copyright © 2022-2024 hanta blog</p>
-
-    <script type="text/javascript" charset="utf-8" src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
+    <ul id="caidan1">
+        <li onclick="location.href='index.html'"><i class="fa fa-angle-double-right"></i></i>返回</li>
+        <li onclick="location.href='blog_login.html'"><i class="fa fa-sign-out"></i>注销</li>
+        <li onclick="location.href='https://github.com/exef-star/hanta'"><i class="fa fa-github"></i>Github仓库</li>
+        <li onclick="location.href='https://www.baidu.com'"><i class="fa fa-paw"></i>百度一下</li>
+        <li onclick="location.href='#QQ:2667174454'"><i class="fa fa-qq"></i><i class="fa fa-at"></i>:2667174454</li>
+    </ul>
     <script>
-    L2Dwidget.init({
-    "model": {
-    　　　　　　　jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
-    "scale": 1
-    },
-    "display": {
-    "position": "right", //模型的表现位置
-    "width": 150, //模型的宽度
-    "height": 300, //模型的高度
-    "hOffset": 0,
-    "vOffset": -20
-    },
-    "mobile": {
-    "show": true,
-    "scale": 0.5
-    },
-    "react": {
-    "opacityDefault": 0.7, //模型默认透明度
-    "opacityOnHover": 0.2
-    }
-    });
+        /* 当前页面的显示区域是文档document */
+        /* 当右键点击文档的时候 会弹出右键菜单 同时需要执行一些行为 */
+        document.oncontextmenu = function(e){
+            document.getElementById("caidan1").style.display = "block";
+            document.getElementById("caidan1").style.left = e.clientX + "px";
+            document.getElementById("caidan1").style.top = e.clientY + "px";
+            return false;//返回一个错误的指使，禁止菜单弹出
+        }
+        //鼠标左键单击
+        document.onclick = function(){
+            // 	alert("fuck");
+            document.getElementById("caidan1").style.display="none";
+        }
     </script>
     <script>
         (function () {
