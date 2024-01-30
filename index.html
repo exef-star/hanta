@@ -81,6 +81,47 @@
                 color: #000000
             }
 		</style>
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.1);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -154,7 +195,7 @@
 	    <h3>😇每日舔狗日记</h3>
             <p id="sentence"></p>
             <p>纯属娱乐，请勿模仿舔狗日记行为！！！Σ(っ °Д °;)っ</p>
-            <button onclick="randomSentence()">再来一段</button>
+	    <button class="button" style="vertical-align:middle" onclick="randomSentence()"><span>再来一段😁</span></button>
             <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/static/js/jquery.min.js"></script>
 	    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/static/js/skel.min.js"></script>
 	    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/static/js/util.js"></script>
