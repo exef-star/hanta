@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+        <style>
+			ul{
+				background-color: white;
+				color: #000000;
+				width: 150px;
+				display: none;
+                background:rgba(222, 221, 221, 0);
+				/* 让当前的ul参照浏览器的边缘进行定位 */
+				position: absolute;
+				padding: 10px;
+				box-shadow: 0px 0px 5px black;
+				border-radius: 10px;
+			}
+			li{
+				list-style: none;
+				line-height: 40px;
+			}
+			li:hover{
+				color: white;
+				background-color: block;
+			}
+            a:link {
+                color: #000000
+            }
+		</style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- 这里的.container作为页面的版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 表示整个用户的信息区域 -->
+            <div class="card">
+                <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+                <h3>可执行程序</h3>
+                <p>一个广东仔，不会说白话😭</p>
+                <p>有时在学校开挂</p>
+                <p>喜欢看FO的视频</p>
+                <hr>
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+                <!-- Setup and start animation! -->
+                <script>
+                var typed = new Typed('#element', {
+                strings: ['勤学如春起之苗，不见其增日有所长；辍学如磨刀之石，不见其损日有所亏。'],
+                typeSpeed: 60,
+                });
+                </script>
+                <a href="#">Github地址</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>6</span>
+                    <span>1</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 右侧内容详情 -->
+        <div class="right">
+        <!-- 使用这个 div 来包裹整个博客的内容详情 -->
+        <div class="blog-content">
+            <!-- 博客标题 -->
+            <h3>网页版Minecraft（可以访问）</h3>
+            <!-- 博客的时间 -->
+            <div class="date">2024-02-01 10:44:55</div>
+            <!-- 正文 -->
+            <p>几日不见，甚是想念</p>
+            <p>不知道大家有没有想要玩老版本的感觉</p>
+            <p>但是网上的MC基本上都是网易或者盗版的</p>
+            <p>而自己又不想要花太多精力去找老版本的MC</p>
+            <p>这里就推荐两个MC网页站点</p>
+            <p><b>1、MC.JS（推荐）</b></p>
+            <a href="https://play.mc.js.cool/">点击进入MC.JS吧┏ (゜ω゜)=☞</a>
+            <img src="img/Minecraft/js.png" height="502" width="980">
+            <p>这个网页版MC是使用JavaScript制作的</p>
+            <p>而且是国人开发，所以访问速度嘎嘎快</p>
+            <p>但是作者访问起来有点慢（大概是开了科学上网的缘故吧）</p>
+            <p>是完整版Minecraft Java Edition 1.5.2</p>
+            <p>可以不用登陆账号，直接游玩</p>
+            <p>可以选择自己的皮肤</p>
+            <p>并且有老版本的剑格挡姿势</p>
+            <p>并且带有血量条、饥饿值，以及经验值</p>
+            <p>潜在水里也有氧气值</p>
+            <p>并且可以存档，点击存档按钮就可以在退出网页的情况下继续游玩</p>
+            <p>但是这个Java版只支持英文</p>
+            <p>如果想体验老版本的复古感觉，那就立即体验吧</p>
+            <p><b>2、Classic Minecraft</b></p>
+            <a href="https://classic.minecraft.net">点击进入Classic Minecraft吧┏ (゜ω゜)=☞</a>
+            <img src="img/Minecraft/classic.png" height="502" width="980">
+            <p>这个网页是Mojang在10周年时免费开放的复古网页</p>
+            <p>也是不用登录，等待加载条加载完就可以了</p>
+            <p>不过因为是MInecraft0.23w</p>
+            <p>所以说没有血量条、饥饿值，以及经验值</p>
+            <p>纯纯的创造模式，也不能飞···</p>
+            <p>方块也是少得可怜</p>
+            <p>这时的操作也是和1.19的操作有很大的差别</p>
+            <p>只能说这个网页是用来怀旧的</p>
+            <p>如果你想要在这里打龙···</p>
+            <p>不好意思😥，这里只有主世界，区块还小的可怜···</p>
+            <p>想要打龙，得移步到1.16才能获得更好的体验了。</p>
+            <hr>
+            <p align="right">——by 可执行程序</p>
+            <div class="commentAll">
+                <!--评论文本区域 begin-->
+                <div class="reviewArea clearfix">
+                    <div class="flex-text-wrap"><pre class="pre"><span></span><br></pre><textarea class="content comment-input" placeholder="请注意自己的言行举止ο(=•ω＜=)ρ⌒☆…" onkeyup="keyUP(this)"></textarea></div>
+                    <a href="javascript:;" class="plBtn">发送评论</a>
+                </div>
+                <!--评论文本区域 end-->
+                <!--评论区域 begin-->
+                <div class="comment-show">
+                    <div class="comment-show-con clearfix">
+                        <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
+                        <div class="comment-show-con-list pull-left clearfix">
+                            <div class="pl-text clearfix">
+                                <a href="#" class="comment-size-name">作者</a>
+                                <span class="my-pl-con">&nbsp;快来评论区聊天吧（づ￣3￣）づ╭❤～</span>
+                            </div>
+                            <div class="date-dz">
+                                <span class="date-dz-left pull-left comment-time">2020-3-9 11:11:39</span>
+                                <div class="date-dz-right pull-right comment-pl-block">
+                                    <a href="javascript:;" class="date-dz-z pull-left">
+                                        <i class="date-dz-z-click-red"></i>赞 (<i class="z-num">6</i>)</a>
+                                </div>
+                            </div>
+                            <div class="hf-list-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--评论区域 end-->
+             </div>
+        </div>
+        </div>
+    </div>
+    <p align="center">Copyright © 2022-2024 hanta blog</p>
+    <ul id="caidan1">
+        <li onclick="location.href='index.html'"><i class="fa fa-angle-double-right"></i></i>返回</li>
+        <li onclick="location.href='blog_login.html'"><i class="fa fa-sign-out"></i>注销</li>
+        <li onclick="location.href='https://github.com/exef-star/hanta'"><i class="fa fa-github"></i>Github仓库</li>
+        <li onclick="location.href='https://www.baidu.com'"><i class="fa fa-paw"></i>百度一下</li>
+        <li onclick="location.href='#QQ:2667174454'"><i class="fa fa-qq"></i><i class="fa fa-at"></i>:2667174454</li>
+    </ul>
+    <script>
+        /* 当前页面的显示区域是文档document */
+        /* 当右键点击文档的时候 会弹出右键菜单 同时需要执行一些行为 */
+        document.oncontextmenu = function(e){
+            document.getElementById("caidan1").style.display = "block";
+            document.getElementById("caidan1").style.left = e.clientX + "px";
+            document.getElementById("caidan1").style.top = e.clientY + "px";
+            return false;//返回一个错误的指使，禁止菜单弹出
+        }
+        //鼠标左键单击
+        document.onclick = function(){
+            // 	alert("fuck");
+            document.getElementById("caidan1").style.display="none";
+        }
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("😂", "😘", "😍", "😊", "😁", "😭", "😜", "😝", "😄",
+                    "😡", "😀", "😥", "🙃", "😋", "👍", "👌", "😱");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+        !
+function() {
+    function n(n, e, t) {
+        return n.getAttribute(e) || t
+    }
+    function e(n) {
+        return document.getElementsByTagName(n)
+    }
+    function t() {
+        var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),
+            o: n(i, "opacity", .5),
+            c: n(i, "color", "0,0,0"),
+            n: n(i, "count", 99)
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+} ();
+    </script>
+</body>
+</html>
