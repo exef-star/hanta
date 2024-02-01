@@ -11,6 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <link rel="stylesheet" href="css/jsstyle.css">
     <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
         <style>
 			ul{
@@ -103,7 +108,34 @@
             <p>这些都是基于Live2D的看板娘</p>
             <p>那要如何使用它呢？</p>
             <p>只需要在&lt;body&gt;和&lt;/body&gt;里面加入以下代码</p>
-            <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/img1/code.png" width="869" height="493">
+            <pre>
+		<code class="language-html">
+			<script type="text/javascript" charset="utf-8" src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
+                        <script>
+                        L2Dwidget.init({
+                        "model": {
+　　　　　　　                           jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+                        "scale": 1
+                        },
+                        "display": {
+                        "position": "right", //模型的表现位置
+                        "width": 150, //模型的宽度
+                        "height": 300, //模型的高度
+                        "hOffset": 0,
+                        "vOffset": -20
+                        },
+                        "mobile": {
+                        "show": true,
+                        "scale": 0.5
+                        },
+                        "react": {
+                        "opacityDefault": 0.7, //模型默认透明度
+                        "opacityOnHover": 0.2
+                        }
+                        });
+                        </script>
+		</code>
+	    </pre>
             <p>那么，你就会得到一个超可爱的“看板娘”😘</p>
             <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/img1/koharu.png" width="169" height="306">
             <p>那么这时就有人说了：“你这个看板娘也太幼稚了，我要换另外一个”</p>
