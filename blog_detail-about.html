@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<style>
+		body{
+			transition: 0.5s;
+      background-image:url('5268d877a2a04864b36b4961ab793f4f.jpg');
+	    background-color:#cccccc;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-attachment:fixed;
+      background-size: cover;
+		}
+	</style>
         <style>
 			ul{
 				background-color: white;
@@ -36,6 +47,22 @@
 		</style>
 </head>
 <body>
+	<theme-button value="light" id="btn" size="1" style="width: 120px;height: 120px;position: absolute;top: 10px;right: 10px;background-color: rgba(255, 255, 255, 0)"></theme-button>
+    <script>
+      document.body.style.backgroundImage = "#424242";
+      btn.addEventListener("change", e => {
+        if (e.detail === 'light') {
+          document.body.style.background = "url(5268d877a2a04864b36b4961ab793f4f.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+        else {
+          
+          document.body.style.background = "url(bc4504cc20134baba18dd1a3d247f302.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/js/script.js"></script>
     <!-- 导航栏 -->
     <div class="nav">
         <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
