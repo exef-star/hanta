@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="481.4048032875793" height="619.4048032875793" viewBox="-0.7024016437896459 -0.7024016437896459 481.4048032875793 619.4048032875793">
+  <defs>
+    <linearGradient id="grad_1" y2="1" x2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  <linearGradient id="grad_1-,0,0,1.7166666984558105,0,0" y2="618" x2="0" x1="0" y1="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.6116816909052432" fill="url(#grad_1-,0,0,1.7166666984558105,0,0)" stroke="none" d="M 0 0 L 480 0 L 480 618 L 0 618 L 0 0 Z " stroke-width="1.4048032875792917"/>
+  <text id="ID0.04337659105658531" fill="#FF9400" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1.97194 0 0 1.97194 113.944 210.984)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Out of Bubbles</tspan></text>
+  <text id="ID0.14584747655317187" fill="#FF9400" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1.59918 0 0 1.59918 167.198 270.852)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Try Again!</tspan></text>
+</svg>
