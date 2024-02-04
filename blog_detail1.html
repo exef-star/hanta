@@ -383,5 +383,28 @@ function() {
     100)
 } ();
     </script>
+<!-- 创建canvas元素 -->
+<canvas class="snow" width="100%" height="100%" style="position: fixed; left: 0; top: 0; z-index: 1000; pointer-events: none;"></canvas>
+<!-- 引入插件 -->
+<script src="https://player.xfyun.club/js/snows/js/jquery.min.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/jquery.let_it_snow.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/modernizr.js"></script>
+<script>
+    // 如果你需要更改网页的背景颜色，请把下面的注释删了
+    // $('body').css('background-color', '#000') // 将网页背景改成黑色
+    $('body').css('overflow-x', 'hidden').css('margin', '0').css('padding', '0') // 防止出现左右滚动条，并清除内外边距
+    $(document).ready( function() {
+        $('canvas.snow').let_it_snow({
+            speed: 0, // 该参数用于控制雪花飘落的速度。数值越高速度越快。数值设置在0-5之间。默认值为0。
+            interaction: true, // 该参数用于设置用户与雪花之间的交互。如果设置为true，那么鼠标和雪花之间将形成一种互斥作用，从而生成一种用户与雪花的交互动作。默认值为true。
+            size: 2, // 该参数用于设置雪花的平均大小。数值越高雪花越大。数值设置在0-10之间。默认值为2。
+            count: 200, // 该参数用于设置统一时间在屏幕中的雪花的数量。默认值为200。
+            opacity: 0, // 该参数用于设置雪花的平均透明度。设置为1，雪花完全不透明。数值设置在0.0到1.0之间。默认值为0。
+            color: '#ffffff', // 该参数用于设置雪花的颜色。
+            windPower: 0, // 该参数用于设置风吹的方向。如果你想风吹向右边，设置为正数。如果想风吹向其它方向，设置为负数。数值越大（正数）/数值越小（负数），风吹动的越厉害。默认值为0。
+            image: false // 你可以使用一张雪花图片来代替默认的圆形雪花。该参数是图片的URL，设置为false表示使用默认的圆形图像。默认值为false。
+        })
+    })
+</script>
 </body>
 </html>
