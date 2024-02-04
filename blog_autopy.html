@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/button.css">
+    <link rel="stylesheet" href="css/jsstyle.css">
+    <link rel="stylesheet" href="css/comment.css">  
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<style>
+		body{
+			transition: 0.5s;
+      background-image:url('5268d877a2a04864b36b4961ab793f4f.jpg');
+	    background-color:#cccccc;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-attachment:fixed;
+      background-size: cover;
+		}
+	</style>
+        <style>
+			ul{
+				background-color: white;
+				color: #000000;
+				width: 150px;
+				display: none;
+                background:rgba(222, 221, 221, 0);
+				/* 让当前的ul参照浏览器的边缘进行定位 */
+				position: absolute;
+				padding: 10px;
+				box-shadow: 0px 0px 5px black;
+				border-radius: 10px;
+			}
+			li{
+				list-style: none;
+				line-height: 40px;
+			}
+			li:hover{
+				color: white;
+				background-color: block;
+			}
+            a:link {
+                color: #000000
+            }
+		</style>
+</head>
+<body>
+    <theme-button value="light" id="btn" size="1" style="width: 120px;height: 120px;position: absolute;top: 10px;right: 10px;background-color: rgba(255, 255, 255, 0)"></theme-button>
+    <script>
+      document.body.style.backgroundImage = "#424242";
+      btn.addEventListener("change", e => {
+        if (e.detail === 'light') {
+          document.body.style.background = "url(5268d877a2a04864b36b4961ab793f4f.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+        else {
+          
+          document.body.style.background = "url(bc4504cc20134baba18dd1a3d247f302.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/js/script.js"></script>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- 这里的.container作为页面的版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 表示整个用户的信息区域 -->
+            <div class="card">
+                <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+                <h3>可执行程序</h3>
+                <p>一个广东仔，不会说白话😭</p>
+                <p>有时在学校开挂</p>
+                <p>喜欢看FO的视频</p>
+                <hr>
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+                <!-- Setup and start animation! -->
+                <script>
+                var typed = new Typed('#element', {
+                strings: ['勤学如春起之苗，不见其增日有所长；辍学如磨刀之石，不见其损日有所亏。——陶渊明'],
+                typeSpeed: 60,
+                });
+                </script>
+                <a href="#">Gitee地址</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 右侧内容详情 -->
+        <div class="right">
+        <!-- 使用这个 div 来包裹整个博客的内容详情 -->
+        <div class="blog-content">
+            <!-- 博客标题 -->
+            <h3>🏡Auto-py-to-exe小白教程</h3>
+            <!-- 博客的时间 -->
+            <div class="date">2024-01-25 09:27:00</div>
+            <!-- 正文 -->
+            <p>在Python中，如果你想要吧程序分享给别人</p>
+            <p>而且别人的电脑上没有安装Python解释器</p>
+            <p>那么，把他转成exe文件就是最好的办法</p>
+            <p>exe文件在Windows系统下可以直接运行</p>
+            <p>那要怎么转exe呢</p>
+            <p>答案是：</p>
+            <p><b>加万能的扩展！！！</b></p>
+            <p>这里就推荐一下auto-py-to-exe</p>
+            <p>他是一个基于pyinstaller的可视化交互界面</p>
+            <p>只需要上传文件并选择图标</p>
+            <p>专属于你的exe就做好了</p>
+            <p>那就看看怎么使用auto-py-to-exe吧！</p>
+            <p>首先前提条件是你的电脑里安装了python3以上版本</p>
+            <p>然后打开cmd，输入以下指令：</p>
+            <hr>
+            <pre>
+                pip install auto-py-to-exe
+            </pre>
+            <hr>
+            <p>等插件安装完成后，输入以下指令：</p>
+            <hr>
+            <pre>
+                auto-py-to-exe
+            </pre>
+            <hr>
+            <p>如果看到这个界面，恭喜你，你成功进入了auto-py-to-exe的可视化界面！</p>
+            <img src="img/pytoexe.png" width="955" height="1024">
+            <p>这里我来给大家讲一下auto-py-to-exe的功能</p>
+            <img src="img/pytoexe1.png" width="955" height="1024">
+            <p>点击Browse选择.py源文件</p>
+            <img src="img/pytoexe3.png" width="937" height="708">
+            <p>这里如果你不知道怎么选择的话，可以按照这个方案来</p>
+            <img src="img/pytoexe2.png" width="955" height="1024">
+            <p>选完之后，就点击最底下的CONVERT .PY TO .EXE开始封装</p>
+            <img src="img/3e3da4c4-c2fd-413d-9331-5763840e7bca.png" width="1008" height="1683">
+            <p>等到封装完，就可以点击OPEN OUTPUT FOLDER查看程序，一般打开的是output文件夹</p>
+            <p>可以在文件资源管理器吧output文件夹固定在侧边栏方便查看程序</p>
+            <img src="img/folder.png" width="820" height="433">
+            <p>点击刚才与你.py文件同名的文件夹，打开并点击与你.py文件并且封装好的exe文件</p>
+            <p>这样我们的Python文件就封装好了！</p>
+            <img src="img/calculator.png" width="820" height="433">
+            <hr>
+            <p align="right">——by 可执行程序</p>
+                                               <!-- <button class="pl_button">评论</button> -->
+<div class="commentAll">
+    <!--评论文本区域 begin-->
+    <div class="reviewArea clearfix">
+        <textarea class="content comment-input" placeholder="请注意自己的言行举止ο(=•ω＜=)ρ⌒☆&hellip;" onkeyup="keyUP(this)"></textarea>
+        <a href="javascript:;" class="plBtn">发送评论</a>
+    </div>
+    <!--评论文本区域 end-->
+    <!--评论区域 begin-->
+    <div class="comment-show">
+        <div class="comment-show-con clearfix">
+            <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-list pull-left clearfix">
+                <div class="pl-text clearfix">
+                    <a href="#" class="comment-size-name">作者</a>
+                    <span class="my-pl-con">&nbsp;快来评论区聊天吧（づ￣3￣）づ╭❤～</span>
+                </div>
+                <div class="date-dz">
+                    <span class="date-dz-left pull-left comment-time">2020-3-9 11:11:39</span>
+                    <div class="date-dz-right pull-right comment-pl-block">
+                        <a href="javascript:;" class="date-dz-z pull-left">
+                            <i class="date-dz-z-click-red"></i>赞 (<i class="z-num">6</i>)</a>
+                    </div>
+                </div>
+                <div class="hf-list-con"></div>
+            </div>
+        </div>
+    </div>
+    <!--评论区域 end-->
+ </div>
+
+
+
+               <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+               <script type="text/javascript" src="js/jquery.flexText.js"></script>
+               <script type="text/javascript" src="js/pl_file.js"></script>
+         </div>
+        </div>
+    </div>
+    
+    <p align="center">Copyright © 2022-2024 hanta blog</p>
+    <ul id="caidan1">
+        <li onclick="location.href='index.html'"><i class="fa fa-angle-double-right"></i></i>返回</li>
+        <li onclick="location.href='blog_login.html'"><i class="fa fa-sign-out"></i>注销</li>
+        <li onclick="location.href='https://github.com/exef-star/hanta'"><i class="fa fa-github"></i>Github仓库</li>
+        <li onclick="location.href='https://www.baidu.com'"><i class="fa fa-paw"></i>百度一下</li>
+        <li onclick="location.href='#QQ:2667174454'"><i class="fa fa-qq"></i><i class="fa fa-at"></i>:2667174454</li>
+    </ul>
+    <script>
+        /* 当前页面的显示区域是文档document */
+        /* 当右键点击文档的时候 会弹出右键菜单 同时需要执行一些行为 */
+        document.oncontextmenu = function(e){
+            document.getElementById("caidan1").style.display = "block";
+            document.getElementById("caidan1").style.left = e.clientX + "px";
+            document.getElementById("caidan1").style.top = e.clientY + "px";
+            return false;//返回一个错误的指使，禁止菜单弹出
+        }
+        //鼠标左键单击
+        document.onclick = function(){
+            // 	alert("fuck");
+            document.getElementById("caidan1").style.display="none";
+        }
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("😂", "😘", "😍", "😊", "😁", "😭", "😜", "😝", "😄",
+                    "😡", "😀", "😥", "🙃", "😋", "👍", "👌", "😱");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+        !
+function() {
+    function n(n, e, t) {
+        return n.getAttribute(e) || t
+    }
+    function e(n) {
+        return document.getElementsByTagName(n)
+    }
+    function t() {
+        var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),
+            o: n(i, "opacity", .5),
+            c: n(i, "color", "0,0,0"),
+            n: n(i, "count", 99)
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+} ();
+    </script>
+</body>
+</html>
