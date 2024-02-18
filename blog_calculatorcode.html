@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/button.css">
+    <link rel="stylesheet" href="css/jsstyle.css">
+    <link rel="stylesheet" href="css/comment.css">  
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<style>
+		body{
+			transition: 0.5s;
+      background-image:url('5268d877a2a04864b36b4961ab793f4f.jpg');
+	    background-color:#cccccc;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-attachment:fixed;
+      background-size: cover;
+		}
+	</style>
+        <style>
+			ul{
+				background-color: white;
+				color: #000000;
+				width: 150px;
+				display: none;
+                background:rgba(222, 221, 221, 0);
+				/* 让当前的ul参照浏览器的边缘进行定位 */
+				position: absolute;
+				padding: 10px;
+				box-shadow: 0px 0px 5px black;
+				border-radius: 10px;
+			}
+			li{
+				list-style: none;
+				line-height: 40px;
+			}
+			li:hover{
+				color: white;
+				background-color: block;
+			}
+            a:link {
+                color: #000000
+            }
+            .user-bio {
+    font-size: 14px;
+    color: #6a737d;
+}
+
+		</style>
+<style>
+    .user-bio .user-bio-top {
+    height: 30px;
+    background-color: #E3E3E3;
+    padding: 8px 12px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.user-bio .user-bio-body {
+    background-color: #EEEEEE;
+    width: 100%;
+    font-size: 13px;
+    color: #666666;
+    overflow: auto;
+    padding: 20px;
+    font-family: "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace;
+    
+}
+.user-bio .user-bio-top div{
+    float: left;
+    margin-right: 10px;
+    width:13px;
+    height:13px;
+    background-color:#FF5F57;
+    border-radius:50px;
+}
+.user-bio .user-bio-top .circle-yellow{
+    float: left;
+    margin-right: 10px;
+    width:13px;
+    height:13px;
+    background-color:#FFBD2E;
+    border-radius:50px;
+}
+.user-bio .user-bio-top .circle-green{
+    float: left;
+    margin-right: 10px;
+    width:13px;
+    height:13px;
+    background-color:#28CA42;
+    border-radius:50px;
+}
+
+</style>
+</head>
+<body>
+    <theme-button value="light" id="btn" size="1" style="width: 120px;height: 120px;position: absolute;top: 10px;right: 10px;background-color: rgba(255, 255, 255, 0)"></theme-button>
+    <script>
+      document.body.style.backgroundImage = "#424242";
+      btn.addEventListener("change", e => {
+        if (e.detail === 'light') {
+          document.body.style.background = "url(5268d877a2a04864b36b4961ab793f4f.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+        else {
+          
+          document.body.style.background = "url(bc4504cc20134baba18dd1a3d247f302.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/js/script.js"></script>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- 这里的.container作为页面的版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 表示整个用户的信息区域 -->
+            <div class="card">
+                <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+                <h3>可执行程序</h3>
+                <p>一个广东仔，不会说白话😭</p>
+                <p>有时在学校开挂</p>
+                <p>喜欢看FO的视频</p>
+                <hr>
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+                <!-- Setup and start animation! -->
+                <script>
+                var typed = new Typed('#element', {
+                strings: ['勤学如春起之苗，不见其增日有所长；辍学如磨刀之石，不见其损日有所亏。——陶渊明'],
+                typeSpeed: 60,
+                });
+                </script>
+                <a href="#">Github地址</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>#</span>
+                    <span>#</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 右侧内容详情 -->
+        <div class="right">
+        <!-- 使用这个 div 来包裹整个博客的内容详情 -->
+        <div class="blog-content">
+            <!-- 博客标题 -->
+            <h3>🧮Python计算器代码</h3>
+            <!-- 博客的时间 -->
+            <div class="date">2024-02-5 22:17:00</div>
+            <!-- 正文 -->
+            <p>这个计算器的条件是有Python解释器</p>
+            <p>然后安装tkinter</p>
+            <p>不说了，直接上代码</p>
+            <div class="user-bio">
+                <div class="user-bio-top">
+                    <div class="circle-red"></div>
+                    <div class="circle-yellow"></div>
+                    <div class="circle-green"></div>
+                </div>
+                <div class="user-bio-body">
+                    <pre>
+import tkinter
+import tkinter.font
+
+class Calculator(object):
+    def __init__(self):
+        self.root = tkinter.Tk()
+        self.all_press_lists = []  # 保存运算数字和符号的列表
+        self.is_press_compute = False  # 判断是否按下运算按钮,默认没有按下
+        self.result = tkinter.StringVar()  # 显示输入的数字及结果
+        self.record = tkinter.StringVar()  # 显示计算过程
+
+    def main(self):
+        self.root.minsize(300, 550)  # 显示框的最小长宽
+        self.root.title('计算器')  # 标题
+        self.root.resizable(False,False)
+        
+
+        input_bg, num_fg, btn_fg, btn_bg = "#ffffff", "#000000", "#000000", "#ffffff"  # 各种颜色
+        btn_w, btn_h = 75, 70  # 按钮的长宽
+
+        my_font = tkinter.font.Font(family='微软雅黑', size=20)  # 设置字体
+        self.result.set(0)
+        self.record.set('')
+        # 显示版
+        label = tkinter.Label(self.root, font=my_font, bg=input_bg, bd='9', fg=num_fg, anchor='se',
+                              textvariable=self.record)
+        label.place(width=300, height=120)
+        label2 = tkinter.Label(self.root, font=my_font, bg=input_bg, bd='9', fg=num_fg, anchor='se',
+                               textvariable=self.result)
+        label2.place(y=120, width=300, height=80)
+
+        # 第一行
+        btn_ac = tkinter.Button(self.root, text='c', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                command=lambda: self.press_compute('AC'))
+        btn_ac.place(x=btn_w * 0, y=200 + btn_h * 0, width=btn_w, height=btn_h)
+        btn_back = tkinter.Button(self.root, text='←', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                  command=lambda: self.press_compute('b'))
+        btn_back.place(x=btn_w * 1, y=200 + btn_h * 0, width=btn_w, height=btn_h)
+        btn_per = tkinter.Button(self.root, text='%', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                 command=lambda: self.press_compute('%'))
+        btn_per.place(x=btn_w * 2, y=200 + btn_h * 0, width=btn_w, height=btn_h)
+        btn_divi = tkinter.Button(self.root, text='÷', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                  command=lambda: self.press_compute('/'))
+        btn_divi.place(x=btn_w * 3, y=200 + btn_h * 0, width=btn_w, height=btn_h)
+
+        # 第二行
+        btn7 = tkinter.Button(self.root, text='7', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('7'))
+        btn7.place(x=btn_w * 0, y=200 + btn_h * 1, width=btn_w, height=btn_h)
+        btn8 = tkinter.Button(self.root, text='8', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('8'))
+        btn8.place(x=btn_w * 1, y=200 + btn_h * 1, width=btn_w, height=btn_h)
+        btn9 = tkinter.Button(self.root, text='9', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('9'))
+        btn9.place(x=btn_w * 2, y=200 + btn_h * 1, width=btn_w, height=btn_h)
+        btn_mul = tkinter.Button(self.root, text='×', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                 command=lambda: self.press_compute('*'))
+        btn_mul.place(x=btn_w * 3, y=200 + btn_h * 1, width=btn_w, height=btn_h)
+
+        # 第三行
+        btn4 = tkinter.Button(self.root, text='4', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('4'))
+        btn4.place(x=btn_w * 0, y=200 + btn_h * 2, width=btn_w, height=btn_h)
+        btn5 = tkinter.Button(self.root, text='5', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('5'))
+        btn5.place(x=btn_w * 1, y=200 + btn_h * 2, width=btn_w, height=btn_h)
+        btn6 = tkinter.Button(self.root, text='6', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('6'))
+        btn6.place(x=btn_w * 2, y=200 + btn_h * 2, width=btn_w, height=btn_h)
+        btn_sub = tkinter.Button(self.root, text='-', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                 command=lambda: self.press_compute('-'))
+        btn_sub.place(x=btn_w * 3, y=200 + btn_h * 2, width=btn_w, height=btn_h)
+
+        # 第四行
+        btn1 = tkinter.Button(self.root, text='1', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('1'))
+        btn1.place(x=btn_w * 0, y=200 + btn_h * 3, width=btn_w, height=btn_h)
+        btn2 = tkinter.Button(self.root, text='2', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('2'))
+        btn2.place(x=btn_w * 1, y=200 + btn_h * 3, width=btn_w, height=btn_h)
+        btn3 = tkinter.Button(self.root, text='3', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('3'))
+        btn3.place(x=btn_w * 2, y=200 + btn_h * 3, width=btn_w, height=btn_h)
+        btn_add = tkinter.Button(self.root, text='+', font=my_font, bg=btn_bg, fg=btn_fg, bd=0,
+                                 command=lambda: self.press_compute('+'))
+        btn_add.place(x=btn_w * 3, y=200 + btn_h * 3, width=btn_w, height=btn_h)
+
+        # 第五行
+        btn0 = tkinter.Button(self.root, text='0', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                              command=lambda: self.press_num('0'))
+        btn0.place(x=btn_w * 0, y=200 + btn_h * 4, width=btn_w * 2, height=btn_h)
+        btn_point = tkinter.Button(self.root, text='.', font=my_font, bg=btn_bg, fg=num_fg, bd=0,
+                                   command=lambda: self.press_num('.'))
+        btn_point.place(x=btn_w * 2, y=200 + btn_h * 4, width=btn_w, height=btn_h)
+        btn_equ = tkinter.Button(self.root, text='=', bg='#982425', font=my_font, fg=num_fg, bd=0,
+                                 command=lambda: self.press_equal())
+        btn_equ.place(x=btn_w * 3, y=200 + btn_h * 4, width=btn_w, height=btn_h)
+        self.root.mainloop()
+
+    # 按下数字
+    def press_num(self, num):
+        if self.is_press_compute is True:  # 如果判断运算按键被按下
+            self.result.set(0)  # 清空self.result
+            self.is_press_compute = False
+        # 判断界面的数字是否为0
+        old_num = self.result.get()
+        if old_num == '0':
+            self.result.set(num)
+        else:
+            new_num = old_num + num
+            self.result.set(new_num)
+
+    # 按下运算符
+    def press_compute(self, sign):
+        num = self.result.get()
+        self.all_press_lists.append(num)
+        self.all_press_lists.append(sign)
+        self.is_press_compute = True
+
+        if sign == 'AC':  # 按下'C',清空列表内容,显示0
+            self.all_press_lists.clear()
+            self.result.set(0)
+        if sign == 'b':  # 按下退格，当前数字逐步减一
+            a = num[0:-1]
+            self.all_press_lists.clear()
+            self.result.set(a)
+
+    # 获取运算结果
+    def press_equal(self):
+        cur_num = self.result.get()
+        self.all_press_lists.append(cur_num)
+        compute_str = ''.join(self.all_press_lists)
+        try:
+            calculate_result = eval(compute_str)
+        except:
+            calculate_result = 'bad parameter'
+        self.result.set(calculate_result)  # 显示结果
+        self.record.set(compute_str + "=")  # 显示运算过程
+        self.all_press_lists.clear()  # 清空列表内容
+
+
+if __name__ == '__main__':
+    my_calculator = Calculator()
+    my_calculator.main()
+                    </pre>
+                </div>
+            </div>
+            <p>效果图：</p>
+            <img src="img/exe.png" width="450" height="864">
+            <div class="spacer"></div>
+            <a href="https://gitee.com/coors_123-toqqqqqqqq/python-calculator/tree/master/">gitee下载地址</a>
+            <hr>
+            <p align="right">——by 可执行程序</p>
+                                               <!-- <button class="pl_button">评论</button> -->
+<div class="commentAll">
+    <!--评论文本区域 begin-->
+    <div class="reviewArea clearfix">
+        <textarea class="content comment-input" placeholder="请注意自己的言行举止ο(=•ω＜=)ρ⌒☆&hellip;" onkeyup="keyUP(this)"></textarea>
+        <a href="javascript:;" class="plBtn">发送评论</a>
+    </div>
+    <!--评论文本区域 end-->
+    <!--评论区域 begin-->
+    <div class="comment-show">
+        <div class="comment-show-con clearfix">
+            <div class="comment-show-con-img pull-left"><img src="images/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-list pull-left clearfix">
+                <div class="pl-text clearfix">
+                    <a href="#" class="comment-size-name">作者</a>
+                    <span class="my-pl-con">&nbsp;快来评论区聊天吧（づ￣3￣）づ╭❤～</span>
+                </div>
+                <div class="date-dz">
+                    <span class="date-dz-left pull-left comment-time">2020-3-9 11:11:39</span>
+                    <div class="date-dz-right pull-right comment-pl-block">
+                        <a href="javascript:;" class="date-dz-z pull-left">
+                            <i class="date-dz-z-click-red"></i>赞 (<i class="z-num">6</i>)</a>
+                    </div>
+                </div>
+                <div class="hf-list-con"></div>
+            </div>
+        </div>
+    </div>
+    <!--评论区域 end-->
+ </div>
+
+
+
+               <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+               <script type="text/javascript" src="js/jquery.flexText.js"></script>
+               <script type="text/javascript" src="js/pl_file.js"></script>
+         </div>
+        </div>
+    </div>
+    
+    <p align="center">Copyright © 2022-2024 hanta blog</p>
+    <ul id="caidan1">
+        <li onclick="location.href='index.html'"><i class="fa fa-angle-double-right"></i></i>返回</li>
+        <li onclick="location.href='blog_login.html'"><i class="fa fa-sign-out"></i>注销</li>
+        <li onclick="location.href='https://github.com/exef-star/hanta'"><i class="fa fa-github"></i>Github仓库</li>
+        <li onclick="location.href='https://www.baidu.com'"><i class="fa fa-paw"></i>百度一下</li>
+        <li onclick="location.href='#QQ:2667174454'"><i class="fa fa-qq"></i><i class="fa fa-at"></i>:2667174454</li>
+    </ul>
+    <script>
+        /* 当前页面的显示区域是文档document */
+        /* 当右键点击文档的时候 会弹出右键菜单 同时需要执行一些行为 */
+        document.oncontextmenu = function(e){
+            document.getElementById("caidan1").style.display = "block";
+            document.getElementById("caidan1").style.left = e.clientX + "px";
+            document.getElementById("caidan1").style.top = e.clientY + "px";
+            return false;//返回一个错误的指使，禁止菜单弹出
+        }
+        //鼠标左键单击
+        document.onclick = function(){
+            // 	alert("fuck");
+            document.getElementById("caidan1").style.display="none";
+        }
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("😂", "😘", "😍", "😊", "😁", "😭", "😜", "😝", "😄",
+                    "😡", "😀", "😥", "🙃", "😋", "👍", "👌", "😱");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+        !
+function() {
+    function n(n, e, t) {
+        return n.getAttribute(e) || t
+    }
+    function e(n) {
+        return document.getElementsByTagName(n)
+    }
+    function t() {
+        var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),
+            o: n(i, "opacity", .5),
+            c: n(i, "color", "0,0,0"),
+            n: n(i, "count", 99)
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+} ();
+    </script>
+<!-- 创建canvas元素 -->
+<canvas class="snow" width="100%" height="100%" style="position: fixed; left: 0; top: 0; z-index: 1000; pointer-events: none;"></canvas>
+<!-- 引入插件 -->
+<script src="https://player.xfyun.club/js/snows/js/jquery.min.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/jquery.let_it_snow.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/modernizr.js"></script>
+<script>
+    // 如果你需要更改网页的背景颜色，请把下面的注释删了
+    // $('body').css('background-color', '#000') // 将网页背景改成黑色
+    $('body').css('overflow-x', 'hidden').css('margin', '0').css('padding', '0') // 防止出现左右滚动条，并清除内外边距
+    $(document).ready( function() {
+        $('canvas.snow').let_it_snow({
+            speed: 0, // 该参数用于控制雪花飘落的速度。数值越高速度越快。数值设置在0-5之间。默认值为0。
+            interaction: true, // 该参数用于设置用户与雪花之间的交互。如果设置为true，那么鼠标和雪花之间将形成一种互斥作用，从而生成一种用户与雪花的交互动作。默认值为true。
+            size: 2, // 该参数用于设置雪花的平均大小。数值越高雪花越大。数值设置在0-10之间。默认值为2。
+            count: 200, // 该参数用于设置统一时间在屏幕中的雪花的数量。默认值为200。
+            opacity: 0, // 该参数用于设置雪花的平均透明度。设置为1，雪花完全不透明。数值设置在0.0到1.0之间。默认值为0。
+            color: '#ffffff', // 该参数用于设置雪花的颜色。
+            windPower: 0, // 该参数用于设置风吹的方向。如果你想风吹向右边，设置为正数。如果想风吹向其它方向，设置为负数。数值越大（正数）/数值越小（负数），风吹动的越厉害。默认值为0。
+            image: false // 你可以使用一张雪花图片来代替默认的圆形雪花。该参数是图片的URL，设置为false表示使用默认的圆形图像。默认值为false。
+        })
+    })
+</script>
+</body>
+</html>
