@@ -1,6 +1,5 @@
 # hanta
 这是我的个人博客，可供大家学习使用
-![Static Badge](https://img.shields.io/badge/:badgeContent)
 ---------------
 更新内容：
 
