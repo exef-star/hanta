@@ -1,7 +1,7 @@
 # 可执行程序的博客
 ![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fgithub.com%2Fexef-star?label=URL&labelColor=%23000000&color=%2331bdec)
-[![github](https://img.shields.io/npm/dm/vue.svg)]
-[![github](https://img.shields.io/circleci/build/github/vuejs/vue/dev.svg)]
+[![github](https://img.shields.io/npm/dm/vue.svg)
+[![github](https://img.shields.io/circleci/build/github/vuejs/vue/dev.svg)
 ---------------
 ![image](https://cdn.jsdelivr.net/gh/exef-star/hanta@main/db68ca89-eb23-4177-a3e9-ef9c82536e39.png)
 这是我的个人博客，可供大家学习使用
