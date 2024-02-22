@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>可执行程序的聊天机器人</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="layui/css/layui.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="text/javascript" src="./lib/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="./lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="./lib/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="./lib/scroll.js"></script>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">可执行程序的聊天机器人</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      <li class="layui-nav-item layui-hide-xs"><a href="https://exef-star.github.io/hanta/"><i class="layui-icon layui-icon-home" style="color: #16b777;"></i>回到可执行程序的博客</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="blog_AI.html"><i class="layui-icon layui-icon-refresh" style="color: #16b777;"></i>刷新页面</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="https://github.com/exef-star/hanta/tree/main/AI"><i class="layui-icon layui-icon-github" style="color: #16b777;"></i>github地址（点个Star吧(/≧▽≦)/）</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;"><i class="layui-icon layui-icon-edit" style="color: #16b777;"></i> 为此页面···</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;" lay-on="test-msg-light5"><i class="layui-icon layui-icon-praise" style="color: #16b777;"></i>点赞</a></dd>
+          <dd><a href="javascript:;" lay-on="test-msg-light6"><i class="layui-icon layui-icon-tread" style="color: #16b777;"></i>踩</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;">Your Profile</a></dd>
+          <dd><a href="javascript:;">Settings</a></dd>
+          <dd><a href="javascript:;">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;"><i class="layui-icon layui-icon-form" style="color: #16b777;"></i>公告<span class="layui-badge-dot layui-bg-green"></span></a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" lay-on="test-msg-light"><i class="layui-icon layui-icon-edit" style="color: #16b777;"></i>博客机器人成立</a></dd>
+            <dd><a href="javascript:;" lay-on="test-msg-light1"><i class="layui-icon layui-icon-dialogue" style="color: #16b777;"></i>使用青云客机器人</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><i class="layui-icon layui-icon-engine" style="color: #16b777;"></i>切换机器人</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" lay-on="test-msg-light2"><i class="layui-icon layui-icon-face-smile" style="color: #16b777;"></i>小思同学（青云客机器人）</a></dd>
+            <dd><a href="javascript:;" lay-on="test-msg-light3"><i class="layui-icon layui-icon-face-cry" style="color: #16b777;"></i>腾讯机器人（暂时不可用）</a></dd>
+            <dd><a href="javascript:;" lay-on="test-msg-light4"><i class="layui-icon layui-icon-face-cry" style="color: #16b777;"></i>文心一言（暂时不可用）</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item" lay-on="test-load-3"><a href="https://layui.dev/"><i class="layui-icon layui-icon-face-smile" style="color: #16b777;"></i>Layui官网</a></li>
+        <li class="layui-nav-item" ><a href="javascript:;" lay-on="test-tips-tab"><i class="layui-icon layui-icon-template" style="color: #16b777;"></i>使用教程<span class="layui-badge-dot layui-bg-green"></span></a></li>
+        <li class="layui-nav-item" lay-on="test-load-3"><a href="about:blank"><i class="layui-icon layui-icon-logout" style="color: #16b777;"></i>退出</a></li>
+      </ul>
+    
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote layui-text">
+        <i class="layui-icon layui-icon-dialogue" style="color: #16b777;"></i></li>欢迎使用青云客API聊天机器人，当前使用的是小思同学<button class="layui-btn layui-btn-xs" id="ID-dropdown-demo-content">
+            评价此网页
+          </button>
+          <style>
+            .demo-dropdown-tabs{padding: 0 16px;}
+          </style>
+      </blockquote>
+      <div class="layui-card layui-panel">
+        <div class="layui-card-header">
+            <p>尝试和机器人聊天吧！</p>
+            <div class="wrap">
+                <div class="main">
+                    <ul class="talk_list" style="top: 0px;">
+                      <!-- <li class="left_word">
+                          <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/AI/img/person01.png" />
+                          <span>你好</span>
+                        </li> -->
+                      <!-- <li class="right_word">
+                                  <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/AI/img/person02.png" />
+                                  <span>你好哦</span>
+                              </li> -->
+                    </ul>
+                    <!-- 右侧滚动条 -->
+                    <div class="drag_bar" style="display: none;">
+                      <div class="drager ui-draggable ui-draggable-handle" style="display: none; height: 412.628px;"></div>
+                    </div>
+                  </div>
+                  <!-- 底部 消息编辑区域 -->
+                  <div class="footer">
+                    <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/AI/img/person02.png" alt="icon" />
+                    <input type="text" placeholder="和机器人聊天吧\(0^◇^0)/" class="input_txt" />
+                    <input type="button" value="发 送" class="input_sub" />
+                  </div>
+                </div>
+        </div>
+        <div class="layui-card-body" class="main">
+        
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  
+</div>
+
+<!-- 引入axios.js -->
+<script src="./lib/axios.js"></script>
+<script>
+  /* 
+    使用数据驱动思路
+        1.声明一个全局数组存储聊天内容
+        2.点击发送
+            2.1 非空判断
+            2.2 将自己的聊天内容添加到数组中
+            2.3 ajax发送请求,获取机器人回复内容添加到数组中
+            2.4 文本清空
+    */
+  //声明一个数组存放聊天信息
+  const arr = []
+  //给按钮注册点击事件
+  document.querySelector('.input_sub').addEventListener('click', function () {
+
+    //获取用户输入的值
+    const text = document.querySelector('.input_txt').value
+    //非空判断
+    if (text.length === 0) {
+      return alert('请输入聊天内容')
+    } else {
+      arr.push({
+        text,
+        isMe: true
+      })
+      renderData(arr)
+      resetui()//显示滚动条
+      //清空文本框
+      document.querySelector('.input_txt').value = ''
+      //发送请求
+      axios({
+        url: 'http://ajax-base-api-t.itheima.net/api/robot',
+        method: 'get',
+        params: { spoken: text }
+      }).then(res => {
+        //成功回调
+        console.log(res)
+        arr.push({
+          text: res.data.data.info.text,
+          isMe: false
+        })
+        console.log(arr);
+        renderData(arr)
+        resetui()//显示滚动条
+      })
+    }
+  })
+  //渲染函数
+  /* 封装渲染函数 */
+  const renderData = arr => {
+    document.querySelector('.talk_list').innerHTML = arr.map(item =>
+      item.isMe ? `
+        <li class="right_word">
+          <img src="img/person02.png" />
+          <span>${item.text}</span>
+        </li>
+      `: `
+        <li class="left_word">
+          <img src="img/person01.png" />
+          <span>${item.text}</span>
+        </li>
+      `
+    ).join('')
+  }
+
+</script>
+ 
+<script src="layui/layui.js"></script>
+<script>
+//JS 
+layui.use(['element', 'layer', 'util'], function(){
+  var element = layui.element;
+  var layer = layui.layer;
+  var util = layui.util;
+  var $ = layui.$;
+  
+  //头部事件
+  util.event('lay-header-event', {
+    menuLeft: function(othis){ // 左侧菜单事件
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    },
+    menuRight: function(){  // 右侧菜单事件
+      layer.open({
+        type: 1,
+        title: '关于',
+        content: '<div style="padding: 15px;">Copyright © 2022-2024 hanta blog<br>UI：Layui<br>机器人：小思同学<br>页面：Gituhb Page</div>',
+        area: ['260px', '100%'],
+        offset: 'rt', // 右上角
+        anim: 'slideLeft', // 从右侧抽屉滑出
+        shadeClose: true,
+        scrollbar: false
+      });
+    }
+  });
+});
+</script>
+
+<script src="/layui/layui.js"></script>  
+<script>
+layui.use(function(){
+  var dropdown = layui.dropdown;
+  // 自定义内容
+  dropdown.render({
+    elem: '#ID-dropdown-demo-content',
+    content: ['<div class="layui-tab layui-tab-brief">',
+      '<ul class="layui-tab-title">',
+        '<li class="layui-this">反馈页面</li>',
+      '</ul>',
+      '<div class="layui-tab-content">',
+        '<div class="layui-tab-item layui-text layui-show"><input type="text" name="" placeholder="在这里输入文本" class="layui-input"><button class="layui-btn layui-btn-primary layui-border-green" lay-on="test-msg-light8"><i class="layui-icon layui-icon-release"></i> 上传</button></div>',
+      '</div>',
+    '</div>'].join(''),
+    className: 'demo-dropdown-tabs',
+    style: 'width: 370px; height: 200px; box-shadow: 1px 1px 30px rgb(0 0 0 / 12%);',
+    // shade: 0.3, // 弹出时开启遮罩 --- 2.8+
+    ready: function(){
+      layui.use('element', function(element){
+        element.render('tab');
+      });
+    }
+  });
+});
+</script>
+
+<script src="/layui/layui.js"></script> 
+<script>
+layui.use(function(){
+  var $ = layui.$;
+  var layer = layui.layer;
+  var util = layui.util;
+  // 事件
+  util.on('lay-on', {
+    'test-iframe-handle': function(){
+      layer.open({
+        type: 2,
+        area: ['680px', '520px'],
+        content: '/layer/test/iframe.html',
+        fixed: false, // 不固定
+        maxmin: true,
+        shadeClose: true,
+        btn: ['获取表单值', '取消'],
+        btnAlign: 'c',
+        yes: function(index, layero){
+          // 获取 iframe 的窗口对象
+          var iframeWin =  window[layero.find('iframe')[0]['name']];
+          var elemMark = iframeWin.$('#mark'); // 获得 iframe 中某个输入框元素
+          var value = elemMark.val();
+          
+          if($.trim(value) === '') return elemMark.focus();
+          // 显示获得的值
+          layer.msg('获得 iframe 中的输入框标记值：'+ value);
+        }
+      });
+    },
+    'test-iframe-video': function(){
+      layer.open({
+        type: 2,
+        title: false,
+        area: ['630px', '360px'],
+        shade: 0.8,
+        closeBtn: 0,
+        shadeClose: true,
+        content: '//player.youku.com/embed/XMzI1NjQyMzkwNA==' // video 地址
+      });
+      layer.msg('点击遮罩区域可关闭');
+    },
+    'test-iframe-overflow': function(){
+      layer.open({
+        type: 2,
+        area: ['360px', '500px'],
+        skin: 'layui-layer-rim', // 加上边框
+        content: ['/layer/test/1.html', 'no'] // 数组第二个成员设为 no 即屏蔽 iframe 滚动条
+      });
+    },
+    'test-iframe-curl': function(){
+      layer.open({
+        type: 2,
+        title: 'MC.JS',
+        shadeClose: true,
+        maxmin: true, //开启最大化最小化按钮
+        area: ['900px', '600px'],
+        content: 'https://play.mc.js.cool//'
+      });
+    }
+    
+  })
+});
+</script>
+
+<script src="/layui/layui.js"></script> 
+<script>
+layui.use(function(){
+  var layer = layui.layer;
+  var util = layui.util;
+  // 事件
+  util.on('lay-on', {
+    
+    "test-msg-light": function(){
+      layer.msg('可执行程序博客机器人于2024年2月19日上线ヾ(^▽^*)))', {icon: 0}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light1": function(){
+      layer.msg('经过最佳挑选，以及问题的准确性，最终选择青云客机器人~\(≧▽≦)/~', {icon: 1}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light2": function(){
+      layer.msg('已切换青云客机器人小思同学', {icon: 1}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light3": function(){
+      layer.msg('当前腾讯机器人不可用，请切换到青云客机器人＞︿＜', {icon: 2}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light4": function(){
+      layer.msg('当前文心一言机器人不可用，请切换到青云客机器人＞︿＜', {icon: 2}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light5": function(){
+      layer.msg('感谢您的反馈，我们会继续保持现在的状态', {icon: 6}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light6": function(){
+      layer.msg('感谢您的反馈，我们会改进当前Bug', {icon: 5}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+    "test-msg-light8": function(){
+      layer.msg('感谢您的反馈', {icon: 1}, function(){
+        // layer.msg('提示框关闭后的回调');
+      });
+    },
+  })
+});
+</script>
+
+<script src="/layui/layui.js"></script> 
+<script>
+layui.use(function(){
+  var layer = layui.layer;
+  var util = layui.util;
+  // 事件
+  util.on('lay-on', {
+    
+    'test-load-3': function(){
+      var loadIndex = layer.load(2);
+      // 模拟关闭
+      setTimeout(function(){
+        layer.close(loadIndex)
+      }, 3000);
+    },
+    
+  })
+});
+</script>
+
+<script>
+    layui.use(function(){
+      var layer = layui.layer;
+      var util = layui.util;
+      // 事件
+      util.on('lay-on', {
+        'test-tips-tab': function(){
+          layer.tab({
+            area: ['800px', '500px'],
+            tab: [{
+              title: '使用', 
+              content: '<div style="padding: 16px;">输入文本和机器人聊天</div>'
+            }, {
+              title: '查看', 
+              content: '<div style="padding: 16px;">点击右侧导航栏查看功能</div>'
+            }, {
+              title: '返回', 
+              content: '<div style="padding: 16px;">点击上方返回博客即可返回博客</div>'
+            }],
+            shadeClose: true
+          });
+        },
+      })
+    });
+    </script>
+    
+</body>
+</html>
