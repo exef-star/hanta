@@ -133,6 +133,29 @@
   right: 0;
 }
 </style>
+<style>
+	.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+.container {
+  display: flex;
+}
+
+.div1, .div2 {
+  flex: 1;
+}
+</style>
 </head>
 <body>
 <div id="music" key="657526d619a3c" api="https://music.yy.mba"></div><script id="xplayer" src="https://music.yy.mba/Static/player3/js/player.js" ></script>
@@ -230,6 +253,22 @@
 	    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/static/js/main.js"></script>
             <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/static/js/index.js"></script>
             <hr>
+	    <h3>服务</h3>
+	    <div class="container">
+            <div class="card">
+            <h4>fchart blockly</h4> 
+            <p>blockly的镜像</p> 
+            <a href = "https://exef-star.github.io/hanta/Blockly/blockly/demos/code/index.html?lang=zh-hans&code=0">进入>></a>
+            </div>
+            <div class="card">
+            <h4>富文本编辑器</h4> 
+            <p>基于tiny的富文本编辑器</p> 
+	    <a href = "https://exef-star.github.io/hanta/blog_text.html">进入>></a>
+            </div>
+            <div class="card">
+            <h4>AI</h4> 
+            <p>正在维护中···</p> 
+            </div>
             <!-- .blog就对应表示一个博客 -->
             <div class="blog">
                 <!-- 博客标题 -->
