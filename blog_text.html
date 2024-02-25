@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客编辑页</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" sizes="16x16">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    
+</head>
+<body>
+     <!-- 导航栏 -->
+     <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- Place the first <script> tag in your HTML's <head> -->
+<script src="https://cdn.tiny.cloud/1/s15qohlwtcoxbvgegrfx1ijx328746kpu3pvy78dhecimobc/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    draggable_modal: true,
+    contextmenu_never_use_native: true ,
+    language:'zh_CN',
+    height: 562 ,
+    max_height: 562 ,
+    min_height: 562 ,
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | language |  bremoveformate',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+
+  });
+  
+</script>
+<textarea>
+  欢迎使用富文本编辑器(/ω＼*)……… (/ω•＼*)<br>这是个基于tinyMCE的富文本编辑器（づ￣3￣）づ╭❤～<br>如果在使用时遇到困难，请反馈给可执行程序(●ˇ∀ˇ●)<br>Copyright © 2022-2024 hanta blog
+</textarea>
+</body>
+</html>
