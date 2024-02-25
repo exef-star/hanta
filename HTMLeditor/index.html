@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>鹏创HTML编辑器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/ace.min.js"></script>
+    <script src="js/mode-html.js"></script>
+    <script src="js/ext-language_tools.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <style>
+        body{
+            background-image:url(https://cdn.jsdelivr.net/gh/exef-star/hanta@main/5268d877a2a04864b36b4961ab793f4f.jpg);
+            background-repeat:no-repeat;
+            background-size:100%;
+        }
+    </style>
+    <script>
+        function loadThemeOption(editor) {
+            var list = JSON.parse('[["chrome","chrome\uFF08\u9ED8\u8BA4\u7ECF\u5178\u4E3B\u9898 - \u63A8\u8350\uFF09"],["xcode","xcode\uFF08\u7070\u767D&\u7C89\u7EA2\u5143\u7D20 - \u63A8\u8350\uFF09"],["solarized_light","solarized_light\uFF08\u62A4\u773C\u9EC4\u8272 - \u63A8\u8350\uFF09"],["solarized_dark","solarized_dark\uFF08\u84DD\u7EFF\u80CC\u666F - \u63A8\u8350%29"],["dawn","dawn\uFF08\u7070\u767D&\u68D5\u7EFF\u5143\u7D20\uFF09"],["textmate","textmate\uFF08\u7070\u767D&\u84DD\u7EFF\u5143\u7D20\uFF09"],["twilight","twilight\uFF08\u6DF1\u7A7A\u9ED1\uFF09"],["cobalt","cobalt\uFF08\u6DF1\u6D77\u84DD\uFF09"]]')
+            for (var i = 0, html = ''; i < list.length; i++) {
+                var item = list[i]
+                var thh = ''
+                if (localStorage.PonConHtmlEditorsetTheme == item[0]) {
+                    var thh = ' selected'
+                    editor.setTheme('ace/theme/' + localStorage.PonConHtmlEditorsetTheme)
+                }
+                html += '<option' + thh + ' value="' + item[0] + '">' + item[1] + '</option>'
+            }
+            $('#themeList').html(html)
+            $('#themeList')[0].addEventListener('input', function () {
+                editor.setTheme('ace/theme/' + $(this).val())
+                localStorage.PonConHtmlEditorsetTheme = $(this).val()
+            })
+        }
+        $(document).ready(function () {
+            // 新建编辑器
+            var editor = ace.edit("editor")
+            // 开始配置编辑器
+            ace.config.set("basePath", 'js')
+            // 默认主题
+            editor.setTheme("ace/theme/chrome")
+            var htmlMode = ace.require("ace/mode/html").Mode
+            editor.session.setMode(new htmlMode())
+            ace.require("ace/ext/language_tools")
+            editor.setOptions({
+                enableBasicAutocompletion: true,
+                enableSnippets: true,
+                enableLiveAutocompletion: true
+            })
+            // 设置编辑器字体大小
+            var mr_setFontSize = localStorage.PonConHtmlEditorsetFontSize
+            if (!mr_setFontSize) {
+                mr_setFontSize = 18
+            }
+            editor.setFontSize(parseInt(mr_setFontSize))
+            $("label.label-fontsize").html('字号：' + mr_setFontSize)
+            $("#set-fontsize").val(mr_setFontSize)
+            if (localStorage.PonConHtmlEditorCode) {
+                editor.setValue(localStorage.PonConHtmlEditorCode)
+            }
+            // 消除文本选中状态
+            var His_row = localStorage.PonConHtmlEditorCursorRow
+            var His_column = localStorage.PonConHtmlEditorCursorColumn
+            if (!His_row) {
+                His_row = 0;
+            }
+            if (!His_column) {
+                His_column = 0;
+            }
+            editor.gotoLine(His_row + 1)
+            editor.moveCursorTo(His_row, His_column)
+            editor.setShowPrintMargin(true)
+            // 以上为编辑器配置
+            $('.goViewer').click(function () {
+                if ($(this).text() == '编辑代码') {
+                    $(this).text('预览网页')
+                    $('#viewer').hide()
+                    $('#editor').fadeIn()
+                } else {
+                    $(this).text('编辑代码')
+                    $('#editor').hide()
+                    $('#viewer').fadeIn()
+                    $('#viewer').html('<iframe id="iframe" name="iframe" style="width: 100%; height: 100%;"></iframe>')
+                    var iframe = window.frames['iframe']
+                    iframe.document.open()
+                    iframe.document.write(editor.getValue())
+                    iframe.document.close()
+                }
+            })
+            // 设置项 - 字体
+            var fontsize
+            $('#set-fontsize')[0].addEventListener("input", function () {
+                fontsize = $("#set-fontsize").val()
+                $("label.label-fontsize").html('字号：' + fontsize)
+                localStorage.PonConHtmlEditorsetFontSize = fontsize
+                editor.setFontSize(parseInt(fontsize))
+            })
+            // 模态框
+            var myModal = new bootstrap.Modal(document.getElementById('modal-seter'))
+            // myModal.show()
+            // 载入主题选项列表
+            loadThemeOption(editor)
+            // 复制代码
+            $('.btn-group button.toCopy').click(function () {
+                $('button.copy').attr('data-clipboard-text', editor.getValue()).click().attr('data-clipboard-text', '')
+            })
+            // 清空代码
+            $('.btn-group button.clean').click(function () {
+                if (confirm('确定要清空？')) {
+                    editor.setValue('')
+                }
+            })
+            // 下载代码
+            $('.btn-group button.download').click(function () {
+                var blob = new Blob([editor.getValue()], { type: "text/html;charset=utf-8" })
+                saveAs(blob, new Date().getTime() + ".html")
+            })
+            // HTML转文本
+            $('.btn-group button.toText').click(function () {
+                $('#toTextResult').html($(editor.getValue()).text().replace(/\n/g, '<br />'))
+            })
+            // 定时保存
+            setInterval(function () {
+                localStorage.PonConHtmlEditorCode = editor.getValue()
+                localStorage.PonConHtmlEditorCursorColumn = editor.selection.getCursor().column
+                localStorage.PonConHtmlEditorCursorRow = editor.selection.getCursor().row
+            }, 500)
+            $('.container').fadeIn()
+            addEventListener('keyup', function (event) {
+                if (event.ctrlKey && event.keyCode == 81) {
+                    $('button.goViewer').click()
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container mt-4 mb-4" style="display: none;">
+        <div class="btn-group mb-3" role="group">
+            <button type="button" class="btn btn-success goViewer">预览网页</button>
+            <button type="button" class="btn btn-secondary toCopy">复制</button>
+            <button type="button" class="btn btn-danger clean">清空</button>
+            <button type="button" class="btn btn-success download">下载</button>
+            <button type="button" class="btn btn-secondary toText" data-bs-toggle="modal"
+                data-bs-target="#modal-toText">提取文本</button>
+            <button type="button" class="btn btn-primary toSet" data-bs-toggle="modal"
+                data-bs-target="#modal-seter">设置</button>
+        </div>
+        <div id="editor" class="mb-3 rounded border border-secondary" style="height: 500px;"></div>
+        <div id="viewer" class="mb-3 rounded border border-secondary" style="height: 500px; display: none;"></div>
+        <button style="display: none;" class="copy"></button>
+    </div>
+    <div class="modal fade" id="modal-seter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">设置</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-auto"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <label for="set-fontsize" class="form-label label-fontsize">字号：</label>
+                        </div>
+                        <div class="col">
+                            <input type="range" class="form-range" min="12" max="50" id="set-fontsize" />
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="themeList" aria-label="Floating label select example"></select>
+                        <label for="themeList">当前主题</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary saveSet" data-bs-dismiss="modal">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-toText" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">HTML转换文本结果</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- <textarea class="form-control" placeholder="无转换结果，请先输入内容" id="toTextResult"
+                        style="height: 200px"></textarea> -->
+                    <!-- <div class="p-3"> -->
+                    <div class="p-3" id="toTextResult" style="word-break: break-all;">
+
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success copy" data-clipboard-target="#toTextResult">复制</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        new ClipboardJS('.copy')
+    </script>
+</body>
+
+</html>
