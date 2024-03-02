@@ -6,8 +6,7 @@
 ---------------
 ![image](https://cdn.jsdelivr.net/gh/exef-star/hanta@main/db68ca89-eb23-4177-a3e9-ef9c82536e39.png)
 ![image](https://cdn.jsdelivr.net/gh/exef-star/hanta@main/2024-02-23%20125134.png)
-https://cdn.jsdelivr.net/gh/exef-star/hanta@main/2024-03-02%2010-33-34.mp4
-这是我的个人博客，可供大家学习使用
+### 这是我的个人博客，可供大家学习使用
 
 ##什么是博客？
 
