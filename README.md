@@ -46,5 +46,4 @@ Layui
 
 Font Answon
 
-
-
+[- 切换英文] (https://github.com/exef-star/hanta/blob/main/README_en.md)
