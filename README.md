@@ -1,6 +1,6 @@
 # 可执行程序的博客 <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 ## 🎉🎉🥳🎄🏮欢迎来到可执行程序的博客🏮🎄🥳🎉🎉
-### 这是我的个人博客，可供大家学习使用
+### 🤗这是我的个人博客，可供大家学习使用
 --------------
 ### 面板详情
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=exef-star&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)](https://github.com/anuraghazra/github-readme-stats)
