@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥳可执行程序的Markdown编辑器</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" sizes="16x16">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/vditor/dist/index.css"
+        />
+    <script src="https://unpkg.com/vditor/dist/index.min.js">
+    </script>
+</head>
+<body>
+     <!-- 导航栏 -->
+     <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <div id="content">
+        </div>
+        <script>
+            var vditor = null;
+            window.onload = function() {
+                vditor = new Vditor(document.getElementById('content'), {
+                  "height":561,
+                    cache: {
+                        enable: false
+                    },
+                    "mode": "sv",
+                    "value": "Copyright © 2022-2024 hanta blog",
+                    
+                    "preview": {
+                        "hljs": {
+                          "lineNumber": true
+                        }
+                    }
+                });
+            } // 测试数据填充            function getContent() {
+            vditor.setValue("## 测试 \n ### 二级标题 ");
+        </script>
+</body>
+</html>
