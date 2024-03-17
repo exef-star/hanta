@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情页</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" sizes="16x16">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/css/blog_detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<style>
+		body{
+			transition: 0.5s;
+      background-image:url('https://pic.imgdb.cn/item/65f6b2a49f345e8d033d2f62.jpg');
+	    background-color:#cccccc;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-attachment:fixed;
+      background-size: cover;
+		}
+	</style>
+        <style>
+			ul{
+				background-color: white;
+				color: #000000;
+				width: 150px;
+				display: none;
+                background:rgba(222, 221, 221, 0);
+				/* 让当前的ul参照浏览器的边缘进行定位 */
+				position: absolute;
+				padding: 10px;
+				box-shadow: 0px 0px 5px black;
+				border-radius: 10px;
+			}
+			li{
+				list-style: none;
+				line-height: 40px;
+			}
+			li:hover{
+				color: white;
+				background-color: block;
+			}
+            a:link {
+                color: #000000
+            }
+		</style>
+<style>
+    .dark{
+        background-color: #000000;
+
+    }
+</style>
+</head>
+<body>
+	<theme-button value="light" id="btn" size="1" style="width: 120px;height: 120px;position: absolute;top: 10px;right: 10px;background-color: rgba(255, 255, 255, 0)"></theme-button>
+    <script>
+      document.body.style.backgroundImage = "#424242";
+      btn.addEventListener("change", e => {
+        if (e.detail === 'light') {
+          document.body.style.background = "url(https://pic.imgdb.cn/item/65f6b2a49f345e8d033d2f62.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+        else {
+          
+          document.body.style.background = "url(https://pic.imgdb.cn/item/65f6b2dc9f345e8d033e327a.jpg) no-repeat";//通过js控制改变行内样式
+					document.body.style.backgroundSize = "cover";
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/js/script.js"></script>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+        <span>可执行程序的博客</span>
+        <!-- 空白元素 实现占位 -->
+        <div class="spacer"></div>
+        <a href="index">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="blog_login.html">注销</a>
+    </div>
+    <!-- 这里的.container作为页面的版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 表示整个用户的信息区域 -->
+            <div class="card">
+                <img src="https://cdn.jsdelivr.net/gh/exef-star/hanta@main/img/hanta.jpg" alt="">
+                <h3>可执行程序</h3>
+                <p>一个广东仔，不会说白话😭</p>
+                <p>有时在学校开挂</p>
+                <p>喜欢看FO的视频</p>
+                <hr>
+                <!-- Element to contain animated typing -->
+                <span id="element"></span>
+
+                <!-- Load library from the CDN -->
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+                <!-- Setup and start animation! -->
+                <script>
+                var typed = new Typed('#element', {
+                strings: ['勤学如春起之苗，不见其增日有所长；辍学如磨刀之石，不见其损日有所亏。', '《我一个鸡砸出四个蛋》，《自瞄锁错人了》，《老子给他倒一桶河豚下去》，《经典1000》'],
+                typeSpeed: 60,
+                });
+                </script>
+                <a href="#">Github地址</a>
+                <div class="counter">
+                    <span>截止文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>14</span>
+                    <span>1</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 右侧内容详情 -->
+        <div class="right">
+        <!-- 使用这个 div 来包裹整个博客的内容详情 -->
+        <div class="blog-content">
+            <!-- 博客标题 -->
+            <h3>Minecraft记录</h3>
+            <!-- 博客的时间 -->
+            <div class="date">2024-03-17 14:54:00</div>
+            <!-- 正文 -->
+            <img src="https://pic.imgdb.cn/item/65f698689f345e8d03b59bab.png" width="100%">
+            <hr>
+            <h4>2023年12月8日</h4>
+            <p>通过mc.js玩到了真正的MC，不过当时的版本有点低，是1.5版本，不过还是在游戏里建了一个火柴盒，当时在森林里找不到家，只好在森林里乱窜，被苦力怕炸死了十余次</p>
+            <img src="https://pic.imgdb.cn/item/65f69a519f345e8d03bf2353.png" width="100%">
+            <img src="https://pic.imgdb.cn/item/65f69a529f345e8d03bf25b6.png" width="100%">
+            <img src="https://pic.imgdb.cn/item/65f69f069f345e8d03d629a8.png" width="100%">
+            <img src="https://pic.imgdb.cn/item/65f6a9229f345e8d030e5c2e.png" width="100%">
+            <hr>
+            <h4>2024年2月15日</h4>
+            <p>开始接触PCL离线模式，玩到了Mine craft1.9版本，在第二个存档上做了以上东西：</p>
+            <p>做了一个活版门房子</p>
+            <p>用TNT炸出了一个地下农场</p>
+            <p>在山脚做了一个动物农场</p>
+            <p>把家门口的平原全部变成耕地</p>
+            <p>酿造了一大箱的药水</p>
+            <p>建了一个船泊</p>
+            <h4>2024年3月16号</h4>
+            <img src="https://pic.imgdb.cn/item/65f6acf89f345e8d0320eb2a.png" width="100%">
+            <img src="https://pic.imgdb.cn/item/65f6acf89f345e8d0320ee45.png" width="100%">
+            <br>
+            <p>感觉原版的装饰太少了，于是就开始在网上找怎么加模组</p>
+            <p>结果搜出来的都是一个结果</p>
+            <p><b>先安装Mine craft Forge！！！</b></p>
+            <p>于是就按照1.13下了一个Forge</p>
+            <p>结果Forge窗口迟迟不出来···</p>
+            <p>最后只能降到了1.12.2版本的Forge</p>
+            <p>加入了两个模组</p>
+            <p>JEI物品管理器（必装）</p>
+            <p>超多生物群系（选装）</p>
+            <p>成品如上面两图</p>
+            <hr>
+            <p align="right">——by 可执行程序</p>
+        </div>
+        
+        </div>
+    </div>
+    <p align="center">Copyright © 2022-2024 hanta blog</p>
+    <ul id="caidan1">
+        <li onclick="location.href='index.html'"><ion-icon name="arrow-undo-outline"></ion-icon>返回</li>
+        <li onclick="location.href='blog_login.html'"><ion-icon name="alert-circle-outline"></ion-icon>注销</li>
+        <li onclick="location.href='https://github.com/exef-star/hanta'"><ion-icon name="logo-github"></ion-icon>Github仓库</li>
+        <li onclick="location.href='https://www.baidu.com'"><ion-icon name="paw-outline"></ion-icon>百度一下</li>
+        <li onclick="location.href='#QQ:2667174454'"><ion-icon name="chatbubbles-outline"></ion-icon><ion-icon name="at-outline"></ion-icon>:2667174454</li>
+    </ul>
+    <script>
+        /* 当前页面的显示区域是文档document */
+        /* 当右键点击文档的时候 会弹出右键菜单 同时需要执行一些行为 */
+        document.oncontextmenu = function(e){
+            document.getElementById("caidan1").style.display = "block";
+            document.getElementById("caidan1").style.left = e.clientX + "px";
+            document.getElementById("caidan1").style.top = e.clientY + "px";
+            return false;//返回一个错误的指使，禁止菜单弹出
+        }
+        //鼠标左键单击
+        document.onclick = function(){
+            // 	alert("fuck");
+            document.getElementById("caidan1").style.display="none";
+        }
+    </script>
+    <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("😂", "😘", "😍", "😊", "😁", "😭", "😜", "😝", "😄",
+                    "😡", "😀", "😥", "🙃", "😋", "👍", "👌", "😱");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+    </script>
+<!-- 创建canvas元素 -->
+<canvas class="snow" width="100%" height="100%" style="position: fixed; left: 0; top: 0; z-index: 1000; pointer-events: none;"></canvas>
+<!-- 引入插件 -->
+<script src="https://player.xfyun.club/js/snows/js/jquery.min.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/jquery.let_it_snow.js"></script>
+<script src="https://player.xfyun.club/js/snows/js/modernizr.js"></script>
+<script>
+    // 如果你需要更改网页的背景颜色，请把下面的注释删了
+    // $('body').css('background-color', '#000') // 将网页背景改成黑色
+    $('body').css('overflow-x', 'hidden').css('margin', '0').css('padding', '0') // 防止出现左右滚动条，并清除内外边距
+    $(document).ready( function() {
+        $('canvas.snow').let_it_snow({
+            speed: 0, // 该参数用于控制雪花飘落的速度。数值越高速度越快。数值设置在0-5之间。默认值为0。
+            interaction: true, // 该参数用于设置用户与雪花之间的交互。如果设置为true，那么鼠标和雪花之间将形成一种互斥作用，从而生成一种用户与雪花的交互动作。默认值为true。
+            size: 2, // 该参数用于设置雪花的平均大小。数值越高雪花越大。数值设置在0-10之间。默认值为2。
+            count: 200, // 该参数用于设置统一时间在屏幕中的雪花的数量。默认值为200。
+            opacity: 0, // 该参数用于设置雪花的平均透明度。设置为1，雪花完全不透明。数值设置在0.0到1.0之间。默认值为0。
+            color: '#ffffff', // 该参数用于设置雪花的颜色。
+            windPower: 0, // 该参数用于设置风吹的方向。如果你想风吹向右边，设置为正数。如果想风吹向其它方向，设置为负数。数值越大（正数）/数值越小（负数），风吹动的越厉害。默认值为0。
+            image: false // 你可以使用一张雪花图片来代替默认的圆形雪花。该参数是图片的URL，设置为false表示使用默认的圆形图像。默认值为false。
+        })
+    })
+</script>
+</body>
+</html>
